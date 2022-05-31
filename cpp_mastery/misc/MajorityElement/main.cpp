@@ -20,6 +20,7 @@ int findMajorityElement(int arr[],int length){
     return -1;
 
 }
+
 int main()
 {
     cout << "Majority Element!" << endl;
