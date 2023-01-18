@@ -24,6 +24,7 @@ public:
     int getId()const {
         return id;
     }
+    //operator< takes only class and enum as arguments and not pointers
     bool operator<(const CustClass &rhs)const
     {
         //It seems that adding operator< in class only works when object is key and not when pointer is key
@@ -55,6 +56,13 @@ int main()
     CustomClass* cc5 = new CustomClass(3);
     cout<<((customMap.find(cc5)!=customMap.end())?"Found":"Not found")<<endl;
 
+    //deallocate
+    for (auto itr=customMap.begin();itr!=customMap.end();itr++){
+        delete itr->first;
+    }
+    customMap.clear();
+    delete cc5;
+
     CustClass* cc1 = new CustClass(9);
     CustClass* cc2 = new CustClass(10);
     CustClass* cc3 = new CustClass(8);
@@ -70,6 +78,15 @@ int main()
 
     CustClass* cc4 = new CustClass(8);
     cout<<((custMap.find(*cc4)!=custMap.end())?"Found":"Not found");
+
+    delete cc4;
+    delete cc1;
+    delete cc2;
+    delete cc3;
+
+    custMap.clear();
+
+
 
     return 0;
 }
