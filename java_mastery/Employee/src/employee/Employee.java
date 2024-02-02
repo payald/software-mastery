@@ -10,10 +10,10 @@ package employee;
  */
 public class Employee {
     
-    String name;
-    Integer age;
-    Double salary;
-    String location;
+    protected String name;
+    protected Integer age;
+    protected Double salary;
+    protected String location;
     Employee(String name,Integer age,Double salary,String location){
         this.age=age;
         this.location=location;
@@ -25,20 +25,5 @@ public class Employee {
         e.salary+=incr;
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Employee emps[]={new Employee("A",1,1.0,"A"),new Employee("B",11,11.0,"B")};
-        for(Employee e:emps){
-            System.out.println(e.age+" "+e.location+ " "+e.name+" "+e.salary);
-            Employee.raiseSalary(e,10);
-        }
-        for(Employee e:emps){
-            System.out.println("after raise "+e.age+" "+e.location+ " "+e.name+" "+e.salary);
-            
-        }
-    }
-    
+     
 }
