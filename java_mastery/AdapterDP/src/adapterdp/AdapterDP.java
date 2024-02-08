@@ -15,7 +15,7 @@ public class AdapterDP {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        PrinterAdapter pa=new PrinterAdapter();
+        Printer pa=new PrinterAdapter();
         pa.print();
     }
     
