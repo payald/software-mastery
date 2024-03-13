@@ -10,7 +10,7 @@ import java.util.Objects;
  *
  * @author payal
  */
-public class Room {
+public class Room implements Comparable<Room>{
     private int capacity;
     private int rate;
     private String type;
@@ -78,6 +78,11 @@ public class Room {
     @Override
     public String toString() {
         return "Room{" + "capacity=" + capacity + ", rate=" + rate + ", type=" + type + '}';
+    }
+
+    @Override
+    public int compareTo(Room room) {
+        return this.type.compareTo(room.type);
     }
     
     

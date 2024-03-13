@@ -50,6 +50,13 @@ public class Collections6 {
         NavigableSet<Integer> tree=new TreeSet<>(list);
         tree.descendingSet().stream().forEach(System.out::println);
         tree.headSet(500).stream().forEach(System.out::println);
+        
+        Set<Room> mytree=new TreeSet<>();
+        //TreeSet uses relational comparison and not equals so implemented comparable in Room
+        mytree.add(r4);
+        mytree.add(r2);
+        
+        mytree.stream().map(r->r.getCapacity()).forEach(System.out::println);
     }
     
 }
