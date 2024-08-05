@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
+ * Leetcode 36 Valid Sudoku
  * @author payal
  */
 public class ValidSudoku {
@@ -142,9 +142,7 @@ public class ValidSudoku {
         List<Set<Character>> rows=new ArrayList<>(Collections.nCopies(rowSize, null));
         List<Set<Character>> cols=new ArrayList<>(Collections.nCopies(colSize, null));
         Map<Integer,Map<Integer,Set<Character>>> subSets=new HashMap<>();//map of row of map of col
-        for(int row=0;row<rowSize;row++){
-            //check if all rows are unique
-            
+        for(int row=0;row<rowSize;row++){            
             for(int col=0;col<colSize;col++){
                 char entry=board[row][col];
                 Set<Character> rowSet=rows.get(row);
